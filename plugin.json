@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "image-pass",
+  "version": "0.1.0",
+  "description": "Use a visual value gate, reference locks, visual review passes, targeted-edit-first routing, and a preservation guard to improve image generation or editing without unnecessary regeneration.",
+  "author": {
+    "name": "sziajoyboy",
+    "url": "https://github.com/sziajoyboy"
+  },
+  "homepage": "https://github.com/sziajoyboy/image_pass",
+  "repository": "https://github.com/sziajoyboy/image_pass",
+  "keywords": [
+    "image-generation",
+    "image-editing",
+    "visual-review",
+    "reference",
+    "design",
+    "creative"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Image Pass",
+        "shortDescription": "Improve images without needless regeneration.",
+        "longDescription": "Runs an API-free visual workflow around the host ChatGPT image tool. It locks the brief and references, reviews only material visual problems, selects up to three image passes, prefers targeted edits over full regeneration when possible, preserves already-correct visual decisions, and stops when another round would only produce variation rather than improvement.",
+        "developerName": "sziajoyboy",
+        "category": "Productivity",
+        "websiteURL": "https://github.com/sziajoyboy/image_pass",
+        "defaultPrompt": "Use Image Pass for this image task. Lock the brief and references first. After generation or editing, only run another visual pass when a concrete material problem exists. Prefer a targeted edit when the problem is local, preserve already-correct locked elements, and stop instead of regenerating for novelty."
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "image-pass-lab",
+  "interface": {
+    "displayName": "Image Pass"
+  },
+  "plugins": [
+    {
+      "name": "image-pass",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/sziajoyboy/image_pass.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

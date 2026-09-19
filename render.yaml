@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: image-pass
+    runtime: node
+    repo: https://github.com/sziajoyboy/image_pass
+    branch: main
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      - key: IMAGE_PASS_RATE_LIMIT
+        value: "120"
+      - key: IMAGE_PASS_MAX_BODY_BYTES
+        value: "1000000"
+      - key: IMAGE_PASS_BEARER_TOKEN
+        sync: false

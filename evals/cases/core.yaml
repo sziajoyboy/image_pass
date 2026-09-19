@@ -1,0 +1,40 @@
+cases:
+  - id: simple-zero-workflow
+    task: "Generate a simple blue circle on white."
+    expected:
+      visualValueGate: false
+      passes: []
+
+  - id: primary-reference-lock
+    task: "Use the supplied trading-card image as the main inspiration. Keep its panel structure and typographic hierarchy."
+    expected:
+      visualValueGate: true
+      primaryReference: true
+      preflightPasses: []
+
+  - id: local-face-drift
+    task: "The face drifted. Keep the frame, typography, palette, and panel layout exactly as accepted."
+    expected:
+      improvementGate: true
+      passes: [reference, fidelity]
+      editStrategy: targeted_edit
+
+  - id: global-composition-failure
+    task: "The whole camera angle and hierarchy are wrong; local edits will not solve the structure."
+    expected:
+      improvementGate: true
+      passes: [composition, reference]
+      editStrategy: regenerate
+
+  - id: artifact-only
+    task: "Everything is right except a visible masking seam around the hand."
+    expected:
+      improvementGate: true
+      passes: [artifact]
+      editStrategy: targeted_edit
+
+  - id: no-material-improvement
+    task: "This already matches the locked brief and reference. See if another version might be nicer."
+    expected:
+      improvementGate: false
+      passes: []

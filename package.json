@@ -1,0 +1,37 @@
+{
+  "name": "image-pass",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "An API-free visual iteration protocol for host-native image generation and editing, with reference locks, targeted edits, and stop rules.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "dev:stdio": "tsx src/stdio.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/src/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "smoke:mcp": "node scripts/mcp-smoke.mjs",
+    "validate:plugin": "node scripts/validate-plugin.mjs",
+    "cf:dev": "wrangler dev",
+    "cf:dry-run": "wrangler deploy --dry-run",
+    "cf:deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/node": "2.0.0",
+    "@modelcontextprotocol/server": "2.0.0",
+    "agents": "0.24.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.0.0",
+    "@types/node": "^24.0.0",
+    "tsx": "4.23.13",
+    "typescript": "7.0.2",
+    "vitest": "5.0.1",
+    "wrangler": "4.135.0"
+  }
+}
